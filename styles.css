@@ -202,7 +202,7 @@ nav a:focus,
 .hero {
     background: linear-gradient(135deg, #d4e8f0 0%, #f8d4d8 50%, #f4c4b4 100%);
     color: #4a5568;
-    padding: 7rem 0;
+    padding: 4.5rem 0;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -243,7 +243,7 @@ nav a:focus,
 
 /* Content Sections - Clean Layout */
 .content-section {
-    padding: 5rem 0;
+    padding: 3.5rem 0;
 }
 
 .alt-bg {
@@ -294,8 +294,8 @@ nav a:focus,
     background-color: var(--card-bg);
     border: 1px solid var(--border);
     border-radius: 16px;
-    padding: 2.5rem;
-    margin-bottom: 2rem;
+    padding: 2rem;
+    margin-bottom: 1.75rem;
     box-shadow: var(--shadow-md);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
