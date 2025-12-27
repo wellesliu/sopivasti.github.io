@@ -202,7 +202,7 @@ nav a:focus,
 .hero {
     background: linear-gradient(135deg, #d4e8f0 0%, #f8d4d8 50%, #f4c4b4 100%);
     color: #4a5568;
-    padding: 3.5rem 0;
+    padding: 2.75rem 0;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -243,7 +243,7 @@ nav a:focus,
 
 /* Content Sections - Clean Layout */
 .content-section {
-    padding: 2.5rem 0;
+    padding: 1.75rem 0;
 }
 
 .alt-bg {
