@@ -6,39 +6,43 @@
 }
 
 :root {
-    /* Light Theme - Professional Color Palette */
+    /* Light Theme - Light Blue & Pastel Brown Palette */
     --bg-primary: #ffffff;
-    --bg-secondary: #f8f9fa;
-    --bg-tertiary: #f0f2f5;
-    --text-primary: #1a1a1a;
-    --text-secondary: #4a5568;
-    --text-tertiary: #718096;
-    --accent: #2563eb;
-    --accent-hover: #1d4ed8;
-    --accent-light: #dbeafe;
-    --border: #e2e8f0;
-    --border-light: #f1f5f9;
+    --bg-secondary: #f5f1ed;
+    --bg-tertiary: #e8e0d8;
+    --text-primary: #3d2f2a;
+    --text-secondary: #6b5750;
+    --text-tertiary: #8a7b73;
+    --accent: #7eb6d4;
+    --accent-hover: #5fa3c4;
+    --accent-light: #d4ebf5;
+    --accent-brown: #b89b88;
+    --accent-brown-hover: #a68571;
+    --border: #d9cec3;
+    --border-light: #ebe4dc;
     --card-bg: #ffffff;
-    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-sm: 0 1px 3px 0 rgba(61, 47, 42, 0.1), 0 1px 2px 0 rgba(61, 47, 42, 0.06);
+    --shadow-md: 0 4px 6px -1px rgba(61, 47, 42, 0.1), 0 2px 4px -1px rgba(61, 47, 42, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(61, 47, 42, 0.1), 0 4px 6px -2px rgba(61, 47, 42, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(61, 47, 42, 0.1), 0 10px 10px -5px rgba(61, 47, 42, 0.04);
 }
 
 [data-theme="dark"] {
-    /* Dark Theme - Professional Color Palette */
-    --bg-primary: #0f172a;
-    --bg-secondary: #1e293b;
-    --bg-tertiary: #334155;
-    --text-primary: #f1f5f9;
-    --text-secondary: #cbd5e1;
-    --text-tertiary: #94a3b8;
-    --accent: #3b82f6;
-    --accent-hover: #60a5fa;
-    --accent-light: #1e3a8a;
-    --border: #334155;
-    --border-light: #475569;
-    --card-bg: #1e293b;
+    /* Dark Theme - Light Blue & Warm Brown Palette */
+    --bg-primary: #1f1815;
+    --bg-secondary: #2d2421;
+    --bg-tertiary: #3d322b;
+    --text-primary: #f5f1ed;
+    --text-secondary: #d4cec7;
+    --text-tertiary: #a8a09a;
+    --accent: #7eb6d4;
+    --accent-hover: #9cc9e0;
+    --accent-light: #2d4f5f;
+    --accent-brown: #b89b88;
+    --accent-brown-hover: #c9b0a0;
+    --border: #3d322b;
+    --border-light: #4d423a;
+    --card-bg: #2d2421;
     --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
@@ -192,7 +196,7 @@ nav a:focus,
 
 /* Hero Section - Bold & Modern */
 .hero {
-    background: linear-gradient(135deg, #2563eb 0%, #4f46e5 50%, #7c3aed 100%);
+    background: linear-gradient(135deg, #7eb6d4 0%, #a8c9dd 50%, #b89b88 100%);
     color: white;
     padding: 7rem 0;
     text-align: center;
@@ -207,7 +211,7 @@ nav a:focus,
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -305,7 +309,7 @@ nav a:focus,
     flex-shrink: 0;
     width: 90px;
     height: 90px;
-    background: linear-gradient(135deg, #2563eb 0%, #4f46e5 50%, #7c3aed 100%);
+    background: linear-gradient(135deg, #7eb6d4 0%, #a8c9dd 50%, #b89b88 100%);
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -365,12 +369,12 @@ nav a:focus,
 }
 
 .btn-secondary {
-    background-color: var(--bg-tertiary);
-    color: var(--text-primary);
+    background-color: var(--accent-brown);
+    color: white;
 }
 
 .btn-secondary:hover {
-    background-color: var(--border);
+    background-color: var(--accent-brown-hover);
 }
 
 /* Legal Section */
