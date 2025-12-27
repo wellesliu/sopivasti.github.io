@@ -6,43 +6,47 @@
 }
 
 :root {
-    /* Light Theme - Light Blue & Pastel Brown Palette */
+    /* Light Theme - Soft Pastel Beach Palette */
     --bg-primary: #ffffff;
-    --bg-secondary: #f5f1ed;
-    --bg-tertiary: #e8e0d8;
-    --text-primary: #3d2f2a;
-    --text-secondary: #6b5750;
-    --text-tertiary: #8a7b73;
-    --accent: #7eb6d4;
-    --accent-hover: #5fa3c4;
-    --accent-light: #d4ebf5;
-    --accent-brown: #b89b88;
-    --accent-brown-hover: #a68571;
-    --border: #d9cec3;
-    --border-light: #ebe4dc;
+    --bg-secondary: #f8f4f0;
+    --bg-tertiary: #ede4dc;
+    --text-primary: #4a5568;
+    --text-secondary: #718096;
+    --text-tertiary: #a0aec0;
+    --accent: #9dc4d4;
+    --accent-hover: #7eb0c4;
+    --accent-light: #d4e8f0;
+    --accent-peach: #f4c4b4;
+    --accent-peach-hover: #e8a894;
+    --accent-pink: #f8d4d8;
+    --accent-coral: #ec9c94;
+    --border: #e2d8cc;
+    --border-light: #f0e8dc;
     --card-bg: #ffffff;
-    --shadow-sm: 0 1px 3px 0 rgba(61, 47, 42, 0.1), 0 1px 2px 0 rgba(61, 47, 42, 0.06);
-    --shadow-md: 0 4px 6px -1px rgba(61, 47, 42, 0.1), 0 2px 4px -1px rgba(61, 47, 42, 0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(61, 47, 42, 0.1), 0 4px 6px -2px rgba(61, 47, 42, 0.05);
-    --shadow-xl: 0 20px 25px -5px rgba(61, 47, 42, 0.1), 0 10px 10px -5px rgba(61, 47, 42, 0.04);
+    --shadow-sm: 0 1px 3px 0 rgba(74, 85, 104, 0.1), 0 1px 2px 0 rgba(74, 85, 104, 0.06);
+    --shadow-md: 0 4px 6px -1px rgba(74, 85, 104, 0.1), 0 2px 4px -1px rgba(74, 85, 104, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(74, 85, 104, 0.1), 0 4px 6px -2px rgba(74, 85, 104, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(74, 85, 104, 0.1), 0 10px 10px -5px rgba(74, 85, 104, 0.04);
 }
 
 [data-theme="dark"] {
-    /* Dark Theme - Light Blue & Warm Brown Palette */
-    --bg-primary: #1f1815;
-    --bg-secondary: #2d2421;
-    --bg-tertiary: #3d322b;
-    --text-primary: #f5f1ed;
-    --text-secondary: #d4cec7;
-    --text-tertiary: #a8a09a;
-    --accent: #7eb6d4;
-    --accent-hover: #9cc9e0;
+    /* Dark Theme - Muted Pastel Palette */
+    --bg-primary: #2d3748;
+    --bg-secondary: #374151;
+    --bg-tertiary: #4b5563;
+    --text-primary: #f7fafc;
+    --text-secondary: #e2e8f0;
+    --text-tertiary: #cbd5e0;
+    --accent: #9dc4d4;
+    --accent-hover: #b8d8e4;
     --accent-light: #2d4f5f;
-    --accent-brown: #b89b88;
-    --accent-brown-hover: #c9b0a0;
-    --border: #3d322b;
-    --border-light: #4d423a;
-    --card-bg: #2d2421;
+    --accent-peach: #f4c4b4;
+    --accent-peach-hover: #f8d0c4;
+    --accent-pink: #f8d4d8;
+    --accent-coral: #ec9c94;
+    --border: #4b5563;
+    --border-light: #5a6478;
+    --card-bg: #374151;
     --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
@@ -194,10 +198,10 @@ nav a:focus,
     display: inline;
 }
 
-/* Hero Section - Bold & Modern */
+/* Hero Section - Soft Pastel Beach */
 .hero {
-    background: linear-gradient(135deg, #7eb6d4 0%, #a8c9dd 50%, #b89b88 100%);
-    color: white;
+    background: linear-gradient(135deg, #d4e8f0 0%, #f8d4d8 50%, #f4c4b4 100%);
+    color: #4a5568;
     padding: 7rem 0;
     text-align: center;
     position: relative;
@@ -211,7 +215,7 @@ nav a:focus,
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 50%);
+    background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.3) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -309,7 +313,7 @@ nav a:focus,
     flex-shrink: 0;
     width: 90px;
     height: 90px;
-    background: linear-gradient(135deg, #7eb6d4 0%, #a8c9dd 50%, #b89b88 100%);
+    background: linear-gradient(135deg, #d4e8f0 0%, #f8d4d8 50%, #f4c4b4 100%);
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -369,12 +373,12 @@ nav a:focus,
 }
 
 .btn-secondary {
-    background-color: var(--accent-brown);
+    background-color: var(--accent-peach);
     color: white;
 }
 
 .btn-secondary:hover {
-    background-color: var(--accent-brown-hover);
+    background-color: var(--accent-peach-hover);
 }
 
 /* Legal Section */
