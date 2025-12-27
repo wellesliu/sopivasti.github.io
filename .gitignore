@@ -1,0 +1,16 @@
+# Private developer notes (for LLM context only)
+CLAUDE.md
+.claude/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.bak
+*~

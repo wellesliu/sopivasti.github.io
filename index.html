@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sopivasti - Mobile Apps</title>
+    <meta name="description" content="A corporate drone who learnt how to build mobile apps as a hobby. Free apps, no ads.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sopivasti.github.io/">
+    <meta property="og:title" content="Sopivasti - Mobile Apps">
+    <meta property="og:description" content="Free mobile apps with no ads. Random Race, Finger Chooser, Number Nexus.">
+    <meta property="og:image" content="https://sopivasti.github.io/og-image.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://sopivasti.github.io/">
+    <meta name="twitter:title" content="Sopivasti - Mobile Apps">
+    <meta name="twitter:description" content="Free mobile apps with no ads. Random Race, Finger Chooser, Number Nexus.">
+    <meta name="twitter:image" content="https://sopivasti.github.io/og-image.png">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#1a73e8">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><a href="index.html" style="text-decoration: none; color: inherit;">Sopivasti</a></h1>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                ☰
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="random-race.html">Random Race</a></li>
+                    <li><a href="finger-chooser.html">Finger Chooser</a></li>
+                    <li><a href="number-nexus.html">Number Nexus</a></li>
+                    <li><a href="#legal">Legal</a></li>
+                    <li><a href="#support">Support</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle" aria-label="Toggle dark mode">
+                <span class="icon-light">☀️</span>
+                <span class="icon-dark">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="mobile-overlay"></div>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h2>Free Mobile Apps</h2>
+                <p class="intro">No ads. Just simple tools and games built as a hobby.</p>
+            </div>
+        </section>
+
+        <section id="apps" class="content-section">
+            <div class="container">
+                <h2>My Apps</h2>
+
+                <div class="app-card" id="random-race">
+                    <div class="app-icon">🦖</div>
+                    <div class="app-content">
+                        <h3>Random Race</h3>
+                        <p>This one was kinda hard to code....gives me a headache every time i go back to it</p>
+                        <div class="app-links">
+                            <a href="https://random-race.web.app" target="_blank" class="btn">Web</a>
+                            <a href="https://play.google.com/store/apps/details?id=com.sopivasti.randomrace" target="_blank" class="btn">Play Store</a>
+                            <a href="https://apps.apple.com/us/app/random-race-decision-maker/id6450887585" target="_blank" class="btn">App Store</a>
+                            <a href="random-race.html" class="btn btn-secondary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app-card" id="finger-chooser">
+                    <div class="app-icon">👆</div>
+                    <div class="app-content">
+                        <h3>Finger Chooser</h3>
+                        <p>Kinda complete as an app...there's similar apps on the app store/play store, I made this just to learn some coding</p>
+                        <div class="app-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.sopivasti.finger_chooser" target="_blank" class="btn">Play Store</a>
+                            <a href="https://apps.apple.com/us/app/finger-chooser-random-picker/id6461083692" target="_blank" class="btn">App Store</a>
+                            <a href="finger-chooser.html" class="btn btn-secondary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app-card" id="number-nexus">
+                    <div class="app-icon">🔢</div>
+                    <div class="app-content">
+                        <h3>Number Nexus</h3>
+                        <p>This game is pretty much in complete state, I'm convinced it's the best mobile app you could get for the countdown number game because every single possible solution is calculated within 1-2 seconds. Other apps do not search for every single possible solution.</p>
+                        <div class="app-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.sopivasti.number_nexus" target="_blank" class="btn">Play Store</a>
+                            <a href="https://apps.apple.com/us/app/number-nexus-math-puzzle/id6465792749" target="_blank" class="btn">App Store</a>
+                            <a href="number-nexus.html" class="btn btn-secondary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="content-section alt-bg">
+            <div class="container">
+                <h2>About</h2>
+                <p>A corporate drone who learnt how to build mobile apps as a hobby.</p>
+                <p>I have a full time 9-5 job and used to squeeze in hours on weekends to learn and work on mobile apps. 😴</p>
+                <p>Nowadays, I'm focused on my day job, but these apps are still here for anyone who finds them useful.</p>
+                <p>Solo developer. Did everything myself.</p>
+            </div>
+        </section>
+
+        <section id="support" class="content-section">
+            <div class="container">
+                <h2>Support</h2>
+                <p>Need help with one of the apps? Have a question or feedback?</p>
+                <p>Feel free to reach out through the app store review section or contact methods provided within each app.</p>
+            </div>
+        </section>
+
+        <section id="legal" class="content-section alt-bg">
+            <div class="container">
+                <h2>Legal</h2>
+                <ul class="legal-links">
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023-2025 Sopivasti. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
