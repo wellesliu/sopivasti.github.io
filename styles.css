@@ -198,6 +198,26 @@ nav a:focus,
     display: inline;
 }
 
+/* Badge Theme Switching */
+.badge-dark {
+    display: none;
+}
+
+[data-theme="dark"] .badge-light {
+    display: none;
+}
+
+[data-theme="dark"] .badge-dark {
+    display: inline;
+}
+
+/* Ensure consistent badge heights */
+.app-links img {
+    height: 40px;
+    width: auto;
+    vertical-align: middle;
+}
+
 /* Hero Section - Soft Pastel Beach */
 .hero {
     background: linear-gradient(135deg, #d4e8f0 0%, #f8d4d8 50%, #f4c4b4 100%);
@@ -320,6 +340,14 @@ nav a:focus,
     justify-content: center;
     font-size: 3rem;
     box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+.app-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
 }
 
 .app-content {
@@ -349,14 +377,18 @@ nav a:focus,
 }
 
 .btn {
-    display: inline-block;
-    padding: 0.875rem 1.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding: 0 1.75rem;
     background-color: var(--accent);
     color: white;
     text-decoration: none;
     border-radius: 10px;
     font-weight: 600;
     font-size: 0.9375rem;
+    line-height: 1;
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: var(--shadow-sm);
     border: none;
@@ -539,7 +571,8 @@ footer p {
     }
 
     .btn {
-        padding: 0.8rem 1.5rem;
+        height: 40px;
+        padding: 0 1.5rem;
         font-size: 0.9rem;
     }
 }
