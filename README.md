@@ -6,7 +6,7 @@ Simple portfolio site for my hobby mobile apps.
 
 - **Random Race** - Dinosaur racing decision maker
 - **Finger Chooser** - Random finger selection tool
-- **Number Nexus** - Countdown numbers game solver
+- **Digits** - Countdown numbers game solver
 
 ## Tech Stack
 
