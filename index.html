@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sopivasti - Mobile Apps</title>
-    <meta name="description" content="A corporate drone who learnt how to build mobile apps as a hobby. Free apps, no ads.">
+    <meta name="description" content="Free mobile apps, no ads. Sudoku, board game tools, decision-makers, and puzzles. Solo dev building apps as a hobby.">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -15,14 +15,14 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sopivasti.github.io/">
     <meta property="og:title" content="Sopivasti - Mobile Apps">
-    <meta property="og:description" content="Free mobile apps with no ads. Random Race, Finger Chooser, Digits, Sudoku, Hexis.">
+    <meta property="og:description" content="5 free mobile apps with no ads. Sudoku, Hexis (Catan tools), Random Race, Finger Chooser, Digits.">
     <meta property="og:image" content="https://sopivasti.github.io/og-image.png">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://sopivasti.github.io/">
     <meta name="twitter:title" content="Sopivasti - Mobile Apps">
-    <meta name="twitter:description" content="Free mobile apps with no ads. Random Race, Finger Chooser, Digits, Sudoku, Hexis.">
+    <meta name="twitter:description" content="5 free mobile apps with no ads. Sudoku, Hexis (Catan tools), Random Race, Finger Chooser, Digits.">
     <meta name="twitter:image" content="https://sopivasti.github.io/og-image.png">
 
     <!-- Theme Color -->
@@ -42,11 +42,10 @@
             <nav>
                 <ul>
                     <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="random-race.html">Random Race</a></li>
-                    <li><a href="finger-chooser.html">Finger Chooser: Selio</a></li>
-                    <li><a href="digits.html">Digits</a></li>
-                    <li><a href="#legal">Legal</a></li>
+                    <li><a href="#apps">Apps</a></li>
+                    <li><a href="#about">About</a></li>
                     <li><a href="#support">Support</a></li>
+                    <li><a href="#legal">Legal</a></li>
                 </ul>
             </nav>
             <button id="theme-toggle" aria-label="Toggle dark mode">
@@ -70,13 +69,39 @@
             <div class="container">
                 <h2>My Apps</h2>
 
+                <div class="app-card" id="sudoku">
+                    <div class="app-icon">
+                        <img src="images/sudoku-icon.png" alt="Sudoku Icon" width="90" height="90">
+                    </div>
+                    <div class="app-content">
+                        <h3>Sudoku</h3>
+                        <p>Classic sudoku puzzles with 5 difficulty levels. Features daily puzzles with streak tracking, timed challenges, and zen mode for relaxed play. Clean interface focused on the puzzle, not distractions.</p>
+                        <div class="app-links">
+                            <span style="color: var(--text-tertiary); font-size: 0.9rem;">Coming soon</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app-card" id="hexis">
+                    <div class="app-icon">
+                        <img src="images/hexis-icon.png" alt="Hexis Icon" width="90" height="90">
+                    </div>
+                    <div class="app-content">
+                        <h3>Hexis</h3>
+                        <p>Catan companion with physics-based dice roller, resource tracking, and board generator. Also includes generic tabletop tools: life tracker, coin flipper, counters, and timers.</p>
+                        <div class="app-links">
+                            <span style="color: var(--text-tertiary); font-size: 0.9rem;">Coming soon</span>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="app-card" id="random-race">
                     <div class="app-icon">
                         <img src="images/random-race-icon.png" alt="Random Race Icon" width="90" height="90">
                     </div>
                     <div class="app-content">
                         <h3>Random Race</h3>
-                        <p>Watch colorful dinosaurs race to make your decisions. Can't decide where to eat? Let the dinos race it out. Features web, iOS, and Android versions.</p>
+                        <p>Watch colorful dinosaurs race to make decisions. Can't decide where to eat? Let the dinos race it out. Available on web, iOS, and Android.</p>
                         <div class="app-links">
                             <a href="https://play.google.com/store/apps/details?id=com.sopivasti.randomrace" target="_blank">
                                 <img src="google-play-badge.svg" alt="Get it on Google Play" height="40">
@@ -86,7 +111,6 @@
                                 <img src="app-store-badge-white.svg" alt="Download on the App Store" height="40" class="badge-dark">
                             </a>
                             <a href="https://wellesliu.github.io/random-race.github.io/" target="_blank" class="btn">🌐 Web</a>
-                            <a href="random-race.html" class="btn btn-secondary">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -97,7 +121,7 @@
                     </div>
                     <div class="app-content">
                         <h3>Finger Chooser: Selio</h3>
-                        <p>Random finger selection for group decisions. Place your fingers on screen, app picks randomly. Perfect for choosing who goes first in board games or who buys the next round.</p>
+                        <p>Random finger selection for group decisions. Place fingers on screen, app picks randomly. Choose who goes first in board games or who buys the next round. Supports up to 10 fingers on Android, 5 on iOS.</p>
                         <div class="app-links">
                             <a href="https://play.google.com/store/apps/details?id=com.sopivasti.finger_chooser" target="_blank">
                                 <img src="google-play-badge.svg" alt="Get it on Google Play" height="40">
@@ -106,7 +130,6 @@
                                 <img src="app-store-badge-black.svg" alt="Download on the App Store" height="40" class="badge-light">
                                 <img src="app-store-badge-white.svg" alt="Download on the App Store" height="40" class="badge-dark">
                             </a>
-                            <a href="finger-chooser.html" class="btn btn-secondary">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -116,8 +139,8 @@
                         <img src="images/digits-icon.png" alt="Digits Icon" width="90" height="90">
                     </div>
                     <div class="app-content">
-                        <h3>Digits: Countdown Numbers Game</h3>
-                        <p>The best digits/countdown app on the store. Customize your own problems and get ALL possible solutions (20+) calculated in 1-2 seconds. Other apps only show one solution—this finds them all.</p>
+                        <h3>Digits</h3>
+                        <p>Math puzzle game inspired by Countdown. Combine six numbers to reach a target using +, −, ×, ÷. Get ALL possible solutions (20+) in seconds, not just one. Works offline with no gameplay limits.</p>
                         <div class="app-links">
                             <a href="https://play.google.com/store/apps/details?id=com.sopivasti.number_nexus" target="_blank">
                                 <img src="google-play-badge.svg" alt="Get it on Google Play" height="40">
@@ -126,7 +149,6 @@
                                 <img src="app-store-badge-black.svg" alt="Download on the App Store" height="40" class="badge-light">
                                 <img src="app-store-badge-white.svg" alt="Download on the App Store" height="40" class="badge-dark">
                             </a>
-                            <a href="digits.html" class="btn btn-secondary">Learn More</a>
                         </div>
                     </div>
                 </div>
