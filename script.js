@@ -99,4 +99,26 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Category filter tabs
+    document.querySelectorAll('.filter-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            const filter = tab.dataset.filter;
+
+            // Update active tab
+            document.querySelector('.filter-tab.active').classList.remove('active');
+            tab.classList.add('active');
+
+            // Filter cards and headers
+            document.querySelectorAll('.app-card, .category-header').forEach(el => {
+                if (filter === 'all') {
+                    el.classList.remove('hidden');
+                } else if (el.dataset.category === filter) {
+                    el.classList.remove('hidden');
+                } else {
+                    el.classList.add('hidden');
+                }
+            });
+        });
+    });
 });

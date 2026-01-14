@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sopivasti - Mobile Apps</title>
-    <meta name="description" content="Free mobile apps, no ads. Roku dice roller, Sudoku, Minesweeper, board game tools, decision-makers, and puzzles. Solo dev building apps as a hobby.">
+    <meta name="description" content="Free mobile apps, no ads. Sudoku, Minesweeper, board game tools, decision-makers, and puzzles. Solo dev building apps as a hobby.">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -15,14 +15,14 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sopivasti.github.io/">
     <meta property="og:title" content="Sopivasti - Mobile Apps">
-    <meta property="og:description" content="7 free mobile apps with no ads. Roku, Sudoku, Hexis (Catan tools), Random Race, Finger Chooser, Digits, Minesweeper.">
+    <meta property="og:description" content="10 free mobile apps with no ads. Games, tools, and decision-makers. Solo dev building apps as a hobby.">
     <meta property="og:image" content="https://sopivasti.github.io/og-image.png">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://sopivasti.github.io/">
     <meta name="twitter:title" content="Sopivasti - Mobile Apps">
-    <meta name="twitter:description" content="7 free mobile apps with no ads. Roku, Sudoku, Hexis (Catan tools), Random Race, Finger Chooser, Digits, Minesweeper.">
+    <meta name="twitter:description" content="10 free mobile apps with no ads. Games, tools, and decision-makers. Solo dev building apps as a hobby.">
     <meta name="twitter:image" content="https://sopivasti.github.io/og-image.png">
 
     <!-- Theme Color -->
@@ -69,133 +69,171 @@
             <div class="container">
                 <h2>My Apps</h2>
 
-                <div class="app-card" id="roku">
-                    <div class="app-icon">
-                        <img src="images/roku-icon.png" alt="Roku Icon" width="90" height="90">
-                    </div>
-                    <div class="app-content">
-                        <h3>Roku</h3>
-                        <p>Minimalist dice roller with physics-based rolling. Track session stats, save named presets for quick access, and enjoy smooth animations. Simple, fast, no bloat.</p>
-                        <div class="app-links">
-                            <a href="https://play.google.com/store/apps/details?id=com.sopivasti.roku" target="_blank">
-                                <img src="google-play-badge.svg" alt="Get it on Google Play" height="40">
-                            </a>
+                <nav class="filter-tabs" role="tablist">
+                    <button class="filter-tab active" data-filter="all">All</button>
+                    <button class="filter-tab" data-filter="highlights">Highlights</button>
+                    <button class="filter-tab" data-filter="games">Games</button>
+                    <button class="filter-tab" data-filter="tools">Tools</button>
+                    <button class="filter-tab" data-filter="productivity">Productivity</button>
+                </nav>
+
+                <div class="app-grid">
+                    <!-- HIGHLIGHTS -->
+                    <h3 class="category-header" data-category="highlights">Highlights</h3>
+
+                    <div class="app-card" id="atom" data-category="highlights">
+                        <div class="app-icon">
+                            <img src="images/atom-icon.png" alt="Atom Icon">
+                        </div>
+                        <h4>Atom</h4>
+                        <p class="app-tagline">Building blocks for everything</p>
+                        <div class="app-badges">
+                            <span class="coming-soon">Coming Soon</span>
                         </div>
                     </div>
-                </div>
 
-                <div class="app-card" id="sudoku">
-                    <div class="app-icon">
-                        <img src="images/sudoku-icon.png" alt="Sudoku Icon" width="90" height="90">
+                    <div class="app-card" id="cuerate" data-category="highlights">
+                        <div class="app-icon">
+                            <img src="images/cuerate-icon.png" alt="Cuerate Icon">
+                        </div>
+                        <h4>Cuerate</h4>
+                        <p class="app-tagline">Discover places through friends</p>
+                        <div class="app-badges">
+                            <span class="coming-soon">Coming Soon</span>
+                        </div>
                     </div>
-                    <div class="app-content">
-                        <h3>Sudoku</h3>
-                        <p>Classic sudoku puzzles with 5 difficulty levels. Features daily puzzles with streak tracking, timed challenges, and zen mode for relaxed play. Clean interface focused on the puzzle, not distractions.</p>
-                        <div class="app-links">
+
+                    <!-- GAMES -->
+                    <h3 class="category-header" data-category="games">Games</h3>
+
+                    <div class="app-card" id="sudoku" data-category="games">
+                        <div class="app-icon">
+                            <img src="images/sudoku-icon.png" alt="Sudoku Icon">
+                        </div>
+                        <h4>Sudoku</h4>
+                        <p class="app-tagline">Classic puzzles, 5 difficulty levels</p>
+                        <div class="app-badges">
                             <a href="https://play.google.com/store/apps/details?id=com.sopivasti.sudoku" target="_blank">
-                                <img src="google-play-badge.svg" alt="Get it on Google Play" height="40">
+                                <img src="google-play-badge.svg" alt="Get it on Google Play">
                             </a>
                         </div>
                     </div>
-                </div>
 
-                <div class="app-card" id="hexis">
-                    <div class="app-icon">
-                        <img src="images/hexis-icon.png" alt="Hexis Icon" width="90" height="90">
-                    </div>
-                    <div class="app-content">
-                        <h3>Hexis</h3>
-                        <p>Catan companion with physics-based dice roller, resource tracking, and board generator. Also includes generic tabletop tools: life tracker, coin flipper, counters, and timers.</p>
-                        <div class="app-links">
-                            <a href="https://play.google.com/store/apps/details?id=com.sopivasti.hexis" target="_blank">
-                                <img src="google-play-badge.svg" alt="Get it on Google Play" height="40">
-                            </a>
+                    <div class="app-card" id="digits" data-category="games">
+                        <div class="app-icon">
+                            <img src="images/digits-icon.png" alt="Digits Icon">
                         </div>
-                    </div>
-                </div>
-
-                <div class="app-card" id="random-race">
-                    <div class="app-icon">
-                        <img src="images/random-race-icon.png" alt="Random Race Icon" width="90" height="90">
-                    </div>
-                    <div class="app-content">
-                        <h3>Random Race</h3>
-                        <p>Watch colorful dinosaurs race to make decisions. Can't decide where to eat? Let the dinos race it out. Available on web, iOS, and Android.</p>
-                        <div class="app-links">
-                            <a href="https://play.google.com/store/apps/details?id=com.sopivasti.randomrace" target="_blank">
-                                <img src="google-play-badge.svg" alt="Get it on Google Play" height="40">
-                            </a>
-                            <a href="https://apps.apple.com/us/app/random-race-decision-maker/id6450887585" target="_blank">
-                                <img src="app-store-badge-black.svg" alt="Download on the App Store" height="40" class="badge-light">
-                                <img src="app-store-badge-white.svg" alt="Download on the App Store" height="40" class="badge-dark">
-                            </a>
-                            <a href="https://wellesliu.github.io/random-race.github.io/" target="_blank" class="btn">🌐 Web</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="app-card" id="finger-chooser">
-                    <div class="app-icon">
-                        <img src="images/finger-chooser-icon.png" alt="Finger Chooser: Selio Icon" width="90" height="90">
-                    </div>
-                    <div class="app-content">
-                        <h3>Finger Chooser: Selio</h3>
-                        <p>Random finger selection for group decisions. Place fingers on screen, app picks randomly. Choose who goes first in board games or who buys the next round. Supports up to 10 fingers on Android, 5 on iOS.</p>
-                        <div class="app-links">
-                            <a href="https://play.google.com/store/apps/details?id=com.sopivasti.finger_chooser" target="_blank">
-                                <img src="google-play-badge.svg" alt="Get it on Google Play" height="40">
-                            </a>
-                            <a href="https://apps.apple.com/us/app/finger-chooser-random-picker/id6461083692" target="_blank">
-                                <img src="app-store-badge-black.svg" alt="Download on the App Store" height="40" class="badge-light">
-                                <img src="app-store-badge-white.svg" alt="Download on the App Store" height="40" class="badge-dark">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="app-card" id="digits">
-                    <div class="app-icon">
-                        <img src="images/digits-icon.png" alt="Digits Icon" width="90" height="90">
-                    </div>
-                    <div class="app-content">
-                        <h3>Digits</h3>
-                        <p>Math puzzle game inspired by Countdown. Combine six numbers to reach a target using +, −, ×, ÷. Get ALL possible solutions (20+) in seconds, not just one. Works offline with no gameplay limits.</p>
-                        <div class="app-links">
+                        <h4>Digits</h4>
+                        <p class="app-tagline">Countdown-style math puzzles</p>
+                        <div class="app-badges">
                             <a href="https://play.google.com/store/apps/details?id=com.sopivasti.number_nexus" target="_blank">
-                                <img src="google-play-badge.svg" alt="Get it on Google Play" height="40">
+                                <img src="google-play-badge.svg" alt="Get it on Google Play">
                             </a>
                             <a href="https://apps.apple.com/us/app/number-nexus-math-puzzle/id6465792749" target="_blank">
-                                <img src="app-store-badge-black.svg" alt="Download on the App Store" height="40" class="badge-light">
-                                <img src="app-store-badge-white.svg" alt="Download on the App Store" height="40" class="badge-dark">
+                                <img src="app-store-badge-black.svg" alt="Download on the App Store" class="badge-light">
+                                <img src="app-store-badge-white.svg" alt="Download on the App Store" class="badge-dark">
                             </a>
                         </div>
                     </div>
-                </div>
 
-                <div class="app-card" id="brevity">
-                    <div class="app-icon">
-                        <img src="images/brevity-icon.png" alt="Brevity Icon" width="90" height="90">
-                    </div>
-                    <div class="app-content">
-                        <h3>Brevity</h3>
-                        <p>Daily quote app with 700,000+ quotes from WikiQuotes. Swipe through wisdom from history's greatest minds. Filter by category, set daily reminders, share your favorites. Clean design, no ads, completely offline.</p>
-                        <div class="app-links">
-                            <a href="https://play.google.com/store/apps/details?id=com.sopivasti.brevity" target="_blank">
-                                <img src="google-play-badge.svg" alt="Get it on Google Play" height="40">
-                            </a>
+                    <div class="app-card" id="minesweeper" data-category="games">
+                        <div class="app-icon">
+                            <img src="images/minesweeper-icon.png" alt="Minesweeper Icon">
                         </div>
-                    </div>
-                </div>
-
-                <div class="app-card" id="minesweeper">
-                    <div class="app-icon">
-                        <img src="images/minesweeper-icon.png" alt="Minesweeper Icon" width="90" height="90">
-                    </div>
-                    <div class="app-content">
-                        <h3>Minesweeper</h3>
-                        <p>Ad-free minesweeper with guaranteed solvable first click.</p>
-                        <div class="app-links">
+                        <h4>Minesweeper</h4>
+                        <p class="app-tagline">Guaranteed solvable first click</p>
+                        <div class="app-badges">
                             <span class="coming-soon">Coming Soon</span>
+                        </div>
+                    </div>
+
+                    <!-- TOOLS -->
+                    <h3 class="category-header" data-category="tools">Tools</h3>
+
+                    <div class="app-card" id="random-race" data-category="tools">
+                        <div class="app-icon">
+                            <img src="images/random-race-icon.png" alt="Random Race Icon">
+                        </div>
+                        <h4>Random Race</h4>
+                        <p class="app-tagline">Let dinos decide for you</p>
+                        <div class="app-badges">
+                            <a href="https://play.google.com/store/apps/details?id=com.sopivasti.randomrace" target="_blank">
+                                <img src="google-play-badge.svg" alt="Get it on Google Play">
+                            </a>
+                            <a href="https://apps.apple.com/us/app/random-race-decision-maker/id6450887585" target="_blank">
+                                <img src="app-store-badge-black.svg" alt="Download on the App Store" class="badge-light">
+                                <img src="app-store-badge-white.svg" alt="Download on the App Store" class="badge-dark">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="app-card" id="finger-chooser" data-category="tools">
+                        <div class="app-icon">
+                            <img src="images/finger-chooser-icon.png" alt="Selio Icon">
+                        </div>
+                        <h4>Selio</h4>
+                        <p class="app-tagline">Random finger picker for groups</p>
+                        <div class="app-badges">
+                            <a href="https://play.google.com/store/apps/details?id=com.sopivasti.finger_chooser" target="_blank">
+                                <img src="google-play-badge.svg" alt="Get it on Google Play">
+                            </a>
+                            <a href="https://apps.apple.com/us/app/finger-chooser-random-picker/id6461083692" target="_blank">
+                                <img src="app-store-badge-black.svg" alt="Download on the App Store" class="badge-light">
+                                <img src="app-store-badge-white.svg" alt="Download on the App Store" class="badge-dark">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="app-card" id="hexis" data-category="tools">
+                        <div class="app-icon">
+                            <img src="images/hexis-icon.png" alt="Hexis Icon">
+                        </div>
+                        <h4>Hexis</h4>
+                        <p class="app-tagline">Catan companion & tabletop tools</p>
+                        <div class="app-badges">
+                            <a href="https://play.google.com/store/apps/details?id=com.sopivasti.hexis" target="_blank">
+                                <img src="google-play-badge.svg" alt="Get it on Google Play">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="app-card" id="roku" data-category="tools">
+                        <div class="app-icon">
+                            <img src="images/roku-icon.png" alt="Roku Icon">
+                        </div>
+                        <h4>Roku</h4>
+                        <p class="app-tagline">Physics-based dice roller</p>
+                        <div class="app-badges">
+                            <a href="https://play.google.com/store/apps/details?id=com.sopivasti.roku" target="_blank">
+                                <img src="google-play-badge.svg" alt="Get it on Google Play">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="app-card" id="brevity" data-category="tools">
+                        <div class="app-icon">
+                            <img src="images/brevity-icon.png" alt="Brevity Icon">
+                        </div>
+                        <h4>Brevity</h4>
+                        <p class="app-tagline">700K+ quotes from WikiQuotes</p>
+                        <div class="app-badges">
+                            <a href="https://play.google.com/store/apps/details?id=com.sopivasti.brevity" target="_blank">
+                                <img src="google-play-badge.svg" alt="Get it on Google Play">
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- PRODUCTIVITY -->
+                    <h3 class="category-header" data-category="productivity">Productivity</h3>
+
+                    <div class="app-card placeholder-card" data-category="productivity">
+                        <div class="app-icon placeholder-icon">
+                            <span>?</span>
+                        </div>
+                        <h4>Coming Soon</h4>
+                        <p class="app-tagline">Organization & productivity apps</p>
+                        <div class="app-badges">
+                            <span class="coming-soon">In Development</span>
                         </div>
                     </div>
                 </div>

@@ -305,75 +305,168 @@ nav a:focus,
     line-height: 1.6;
 }
 
-/* App Cards - Premium Design */
+/* Filter Tabs */
+.filter-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.filter-tab {
+    padding: 10px 20px;
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    font-family: inherit;
+    transition: all 0.2s ease;
+}
+
+.filter-tab:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.filter-tab.active {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+/* App Grid Layout */
 #apps {
     background-color: var(--bg-primary);
 }
 
+.app-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* Category Headers */
+.category-header {
+    grid-column: 1 / -1;
+    margin: 32px 0 12px;
+    padding-bottom: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.category-header:first-of-type {
+    margin-top: 0;
+}
+
+/* Hidden state for filtering */
+.app-card.hidden,
+.category-header.hidden {
+    display: none;
+}
+
+/* App Cards - Compact Grid Design */
 .app-card {
     background-color: var(--card-bg);
     border: 1px solid var(--border);
     border-radius: 16px;
-    padding: 2rem;
-    margin-bottom: 1.5rem;
-    box-shadow: var(--shadow-md);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 24px 20px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
-    gap: 2rem;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .app-card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-xl);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
     border-color: var(--accent-light);
 }
 
 .app-icon {
     flex-shrink: 0;
-    width: 90px;
-    height: 90px;
+    width: 72px;
+    height: 72px;
     background: linear-gradient(135deg, #d4e8f0 0%, #f8d4d8 50%, #f4c4b4 100%);
-    border-radius: 20px;
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3rem;
-    box-shadow: var(--shadow-lg);
+    font-size: 2.5rem;
+    box-shadow: var(--shadow-md);
     overflow: hidden;
+    margin-bottom: 16px;
 }
 
 .app-icon img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 20px;
+    border-radius: 16px;
 }
 
-.app-content {
-    flex: 1;
-}
-
-.app-card h3 {
-    font-size: 1.875rem;
+.app-card h4 {
+    font-size: 1.125rem;
     color: var(--text-primary);
-    margin-bottom: 0.75rem;
+    margin-bottom: 6px;
     margin-top: 0;
-    font-weight: 700;
-    letter-spacing: -0.025em;
+    font-weight: 600;
+    letter-spacing: -0.01em;
 }
 
-.app-card p {
-    margin-bottom: 1.25rem;
-    color: var(--text-secondary);
-    font-size: 1.0625rem;
-    line-height: 1.6;
+.app-tagline {
+    margin-bottom: 16px;
+    color: var(--text-tertiary);
+    font-size: 0.875rem;
+    line-height: 1.5;
 }
 
-.app-links {
+.app-badges {
     display: flex;
-    gap: 0.875rem;
+    gap: 8px;
     flex-wrap: wrap;
+    justify-content: center;
+}
+
+.app-badges img {
+    height: 32px;
+    width: auto;
+}
+
+.coming-soon {
+    display: inline-block;
+    padding: 6px 14px;
+    background: var(--bg-secondary);
+    color: var(--text-tertiary);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+/* Placeholder card styling */
+.placeholder-card {
+    border-style: dashed;
+    opacity: 0.7;
+}
+
+.placeholder-icon {
+    background: var(--bg-secondary) !important;
+    box-shadow: none !important;
+}
+
+.placeholder-icon span {
+    font-size: 2rem;
+    color: var(--text-tertiary);
+    font-weight: 300;
 }
 
 .btn {
@@ -548,26 +641,58 @@ footer p {
         font-size: 1.0625rem;
     }
 
+    /* Filter tabs - horizontal scroll on mobile */
+    .filter-tabs {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        flex-wrap: nowrap;
+        padding-bottom: 8px;
+        margin-bottom: 20px;
+    }
+
+    .filter-tab {
+        flex-shrink: 0;
+        padding: 8px 16px;
+        font-size: 0.875rem;
+    }
+
+    /* App grid - 2 columns on mobile */
+    .app-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
     .app-card {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 2rem 1.5rem;
+        padding: 16px 12px;
     }
 
     .app-icon {
-        width: 100px;
-        height: 100px;
-        font-size: 3.25rem;
+        width: 56px;
+        height: 56px;
+        border-radius: 12px;
+        margin-bottom: 12px;
     }
 
-    .app-card h3 {
-        font-size: 1.625rem;
-        margin-top: 1rem;
+    .app-icon img {
+        border-radius: 12px;
     }
 
-    .app-links {
-        justify-content: center;
+    .app-card h4 {
+        font-size: 0.9375rem;
+    }
+
+    .app-tagline {
+        font-size: 0.75rem;
+        margin-bottom: 12px;
+    }
+
+    .app-badges img {
+        height: 28px;
+    }
+
+    .category-header {
+        font-size: 0.75rem;
+        margin: 24px 0 8px;
     }
 
     .btn {
