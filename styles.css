@@ -310,34 +310,100 @@ nav a:focus,
     background-color: var(--bg-primary);
 }
 
+/* Category Colors */
+:root {
+    --cat-highlights: #f59e0b;
+    --cat-games: #ef4444;
+    --cat-tabletop: #3b82f6;
+    --cat-tools: #22c55e;
+    --cat-lifestyle: #a855f7;
+    --cat-productivity: #f97316;
+}
+
+/* Filter Chips */
+.filter-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.filter-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: var(--card-bg);
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-chip:hover {
+    border-color: var(--accent);
+    color: var(--text-primary);
+}
+
+.filter-chip.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+}
+
+.filter-chip.active .chip-dot {
+    background: white;
+}
+
+.chip-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.chip-dot.highlights { background: var(--cat-highlights); }
+.chip-dot.games { background: var(--cat-games); }
+.chip-dot.tabletop { background: var(--cat-tabletop); }
+.chip-dot.tools { background: var(--cat-tools); }
+.chip-dot.lifestyle { background: var(--cat-lifestyle); }
+.chip-dot.productivity { background: var(--cat-productivity); }
+
 .app-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
 }
 
-/* Category Headers */
-.category-header {
-    grid-column: 1 / -1;
-    margin: 32px 0 12px;
-    padding-bottom: 8px;
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--text-tertiary);
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    border-bottom: 1px solid var(--border-light);
-}
-
-.category-header:first-of-type {
-    margin-top: 0;
-}
-
 /* Hidden state for filtering */
-.app-card.hidden,
-.category-header.hidden {
+.app-card.hidden {
     display: none;
 }
+
+/* Category accent on cards */
+.app-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.app-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    border-radius: 16px 0 0 16px;
+}
+
+.app-card[data-category="highlights"]::before { background: var(--cat-highlights); }
+.app-card[data-category="games"]::before { background: var(--cat-games); }
+.app-card[data-category="tabletop"]::before { background: var(--cat-tabletop); }
+.app-card[data-category="tools"]::before { background: var(--cat-tools); }
+.app-card[data-category="lifestyle"]::before { background: var(--cat-lifestyle); }
+.app-card[data-category="productivity"]::before { background: var(--cat-productivity); }
 
 /* App Cards - Compact Grid Design */
 .app-card {
@@ -643,9 +709,19 @@ footer p {
         height: 28px;
     }
 
-    .category-header {
+    .filter-chips {
+        gap: 6px;
+        margin-bottom: 16px;
+    }
+
+    .filter-chip {
+        padding: 6px 12px;
         font-size: 0.75rem;
-        margin: 24px 0 8px;
+    }
+
+    .chip-dot {
+        width: 6px;
+        height: 6px;
     }
 
     .btn {

@@ -100,4 +100,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // App category filtering
+    const filterChips = document.querySelectorAll('.filter-chip');
+    const appCards = document.querySelectorAll('.app-card');
+
+    filterChips.forEach(chip => {
+        chip.addEventListener('click', () => {
+            const filter = chip.dataset.filter;
+
+            // Update active chip
+            filterChips.forEach(c => c.classList.remove('active'));
+            chip.classList.add('active');
+
+            // Filter cards
+            appCards.forEach(card => {
+                if (filter === 'all' || card.dataset.category === filter) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        });
+    });
+
 });
