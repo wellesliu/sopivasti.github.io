@@ -104,6 +104,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const filterChips = document.querySelectorAll('.filter-chip');
     const appCards = document.querySelectorAll('.app-card');
 
+    // Update filter chip counts
+    filterChips.forEach(chip => {
+        const filter = chip.dataset.filter;
+        const count = filter === 'all'
+            ? appCards.length
+            : document.querySelectorAll(`.app-card[data-category="${filter}"]`).length;
+
+        // Append count to existing text (preserving the dot span for category chips)
+        const dotSpan = chip.querySelector('.chip-dot');
+        const label = filter.charAt(0).toUpperCase() + filter.slice(1);
+        chip.innerHTML = dotSpan ? `<span class="chip-dot ${filter}"></span>${label} (${count})` : `${label} (${count})`;
+    });
+
     filterChips.forEach(chip => {
         chip.addEventListener('click', () => {
             const filter = chip.dataset.filter;
