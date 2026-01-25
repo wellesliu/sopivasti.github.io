@@ -746,6 +746,24 @@ footer p {
     }
 }
 
+/* App List Table */
+.app-list {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+.app-list th,
+.app-list td {
+    text-align: left;
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.app-list th {
+    font-weight: 600;
+}
+
 /* Print styles */
 @media print {
     header {
