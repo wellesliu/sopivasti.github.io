@@ -262,6 +262,53 @@ nav a:focus,
     letter-spacing: -0.01em;
 }
 
+/* Patreon Button */
+.patreon-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 1.5rem;
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid rgba(255, 66, 77, 0.3);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.patreon-btn:hover {
+    background: #ffffff;
+    border-color: #FF424D;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 66, 77, 0.25);
+}
+
+.patreon-text {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #1e3a5f;
+}
+
+.patreon-logo {
+    height: 22px;
+    width: auto;
+}
+
+[data-theme="dark"] .patreon-btn {
+    background: rgba(45, 55, 72, 0.95);
+    border-color: rgba(255, 66, 77, 0.4);
+}
+
+[data-theme="dark"] .patreon-btn:hover {
+    background: #374151;
+    border-color: #FF424D;
+}
+
+[data-theme="dark"] .patreon-text {
+    color: #f7fafc;
+}
+
 /* Content Sections - Clean Layout */
 .content-section {
     padding: 1.75rem 0;
@@ -662,6 +709,20 @@ footer p {
 
     .hero .intro {
         font-size: 1.125rem;
+    }
+
+    .patreon-btn {
+        padding: 10px 20px;
+        gap: 6px;
+        margin-top: 1.25rem;
+    }
+
+    .patreon-text {
+        font-size: 0.875rem;
+    }
+
+    .patreon-logo {
+        height: 18px;
     }
 
     .content-section {
