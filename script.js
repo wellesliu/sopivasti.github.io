@@ -107,13 +107,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // Update filter chip counts
     filterChips.forEach(chip => {
         const filter = chip.dataset.filter;
-        const count = filter === 'all'
-            ? appCards.length
-            : document.querySelectorAll(`.app-card[data-category="${filter}"]`).length;
+        let count;
+        if (filter === 'all') {
+            count = appCards.length;
+        } else if (filter === 'coming-soon') {
+            count = document.querySelectorAll('.app-card .coming-soon').length;
+        } else {
+            count = document.querySelectorAll(`.app-card[data-category="${filter}"]`).length;
+        }
 
         // Append count to existing text (preserving the dot span for category chips)
         const dotSpan = chip.querySelector('.chip-dot');
-        const label = filter.charAt(0).toUpperCase() + filter.slice(1);
+        const label = filter === 'coming-soon' ? 'Coming Soon' : filter.charAt(0).toUpperCase() + filter.slice(1);
         chip.innerHTML = dotSpan ? `<span class="chip-dot ${filter}"></span>${label} (${count})` : `${label} (${count})`;
     });
 
@@ -127,7 +132,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Filter cards
             appCards.forEach(card => {
-                if (filter === 'all' || card.dataset.category === filter) {
+                const isComingSoon = card.querySelector('.coming-soon') !== null;
+                const matchesFilter = filter === 'all' ||
+                    (filter === 'coming-soon' && isComingSoon) ||
+                    (filter !== 'coming-soon' && card.dataset.category === filter);
+
+                if (matchesFilter) {
                     card.classList.remove('hidden');
                 } else {
                     card.classList.add('hidden');

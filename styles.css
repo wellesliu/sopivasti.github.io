@@ -319,6 +319,7 @@ nav a:focus,
     --cat-tools: #22c55e;
     --cat-lifestyle: #a855f7;
     --cat-productivity: #f97316;
+    --cat-coming-soon: #6b7280;
 }
 
 /* Filter Chips */
@@ -371,6 +372,7 @@ nav a:focus,
 .chip-dot.tools { background: var(--cat-tools); }
 .chip-dot.lifestyle { background: var(--cat-lifestyle); }
 .chip-dot.productivity { background: var(--cat-productivity); }
+.chip-dot.coming-soon { background: var(--cat-coming-soon); }
 
 .app-grid {
     display: grid;
