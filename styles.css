@@ -302,7 +302,9 @@ nav a:focus,
 
 .patreon-logo {
     height: 28px;
-    width: auto;
+    width: 148px;
+    object-fit: contain;
+    object-position: left center;
 }
 
 [data-theme="dark"] .patreon-btn {
@@ -733,6 +735,7 @@ footer p {
 
     .patreon-logo {
         height: 24px;
+        width: 127px;
     }
 
     .content-section {
