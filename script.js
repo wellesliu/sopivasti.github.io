@@ -1,5 +1,21 @@
-// Theme Toggle Functionality
-document.addEventListener('DOMContentLoaded', () => {
+// Load shared header component
+async function loadHeader() {
+    const headerPlaceholder = document.getElementById('header-placeholder');
+    if (headerPlaceholder) {
+        try {
+            const response = await fetch('components/header.html');
+            const html = await response.text();
+            headerPlaceholder.outerHTML = html;
+        } catch (e) {
+            console.error('Failed to load header:', e);
+        }
+    }
+}
+
+// Initialize app after header loads
+async function init() {
+    await loadHeader();
+
     const themeToggle = document.getElementById('theme-toggle');
     const html = document.documentElement;
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
@@ -47,39 +63,53 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    // Smooth scrolling for anchor links (handles both #section and index.html#section)
+    document.querySelectorAll('nav a').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
 
-            // Skip if it's just "#"
-            if (href === '#') return;
+            // Extract hash from href (handles both "#section" and "index.html#section")
+            const hashIndex = href.indexOf('#');
+            if (hashIndex === -1) return;
 
-            e.preventDefault();
-            const target = document.querySelector(href);
+            const hash = href.substring(hashIndex);
+            if (hash === '#') return;
 
-            if (target) {
-                const headerOffset = 80;
-                const elementPosition = target.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            // Check if this is a same-page link
+            const isIndexPage = window.location.pathname.endsWith('index.html') ||
+                               window.location.pathname.endsWith('/');
+            const isLinkToIndex = href.startsWith('index.html#') || href.startsWith('#');
 
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
+            if (isIndexPage && isLinkToIndex) {
+                e.preventDefault();
+                const target = document.querySelector(hash);
 
-                // Update active nav link (only for hash links)
-                document.querySelectorAll('nav a[href^="#"]').forEach(link => {
-                    link.classList.remove('active');
-                });
-                this.classList.add('active');
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+
+                    // Update active nav link
+                    document.querySelectorAll('nav a').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+
+                    // Update URL hash without jumping
+                    history.pushState(null, null, hash);
+                }
             }
         });
     });
 
     // Highlight active section in navigation on scroll
     const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    const navLinks = document.querySelectorAll('nav a');
 
     window.addEventListener('scroll', () => {
         let current = '';
@@ -93,8 +123,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            const linkHash = href.includes('#') ? href.substring(href.indexOf('#')) : '';
             link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
+            if (linkHash === `#${current}`) {
                 link.classList.add('active');
             }
         });
@@ -146,4 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-});
+}
+
+// Start the app
+document.addEventListener('DOMContentLoaded', init);
