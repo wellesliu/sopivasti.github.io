@@ -222,8 +222,7 @@ nav a:focus,
 .hero {
     background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 25%, #7dd3fc 50%, #38bdf8 75%, #0ea5e9 100%);
     color: #1e3a5f;
-    padding: 2.75rem 0;
-    text-align: center;
+    padding: 3rem 0;
     position: relative;
     overflow: hidden;
 }
@@ -245,21 +244,166 @@ nav a:focus,
     z-index: 1;
 }
 
-.hero h2 {
-    font-size: 3.5rem;
-    margin-bottom: 1.25rem;
-    font-weight: 800;
-    letter-spacing: -0.025em;
-    line-height: 1.1;
+/* Hero Split Layout */
+.hero-split {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    max-width: 1100px;
 }
 
-.hero .intro {
-    font-size: 1.4rem;
-    font-weight: 400;
-    opacity: 0.95;
-    max-width: 600px;
-    margin: 0 auto;
+.hero-left {
+    flex: 0 0 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.hero-stats {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e3a5f;
+    margin-bottom: 1.5rem;
     letter-spacing: -0.01em;
+}
+
+.hero-right {
+    flex: 0 0 55%;
+}
+
+/* Carousel */
+.carousel {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+[data-theme="dark"] .carousel {
+    background: rgba(0, 0, 0, 0.25);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.carousel-slides {
+    position: relative;
+    min-height: 200px;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+}
+
+.carousel-icon {
+    width: 120px;
+    height: 120px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    margin-bottom: 1rem;
+}
+
+.carousel-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e3a5f;
+    margin: 0 0 0.5rem 0;
+}
+
+[data-theme="dark"] .carousel-name {
+    color: #f7fafc;
+}
+
+.carousel-desc {
+    font-size: 1rem;
+    color: #1e3a5f;
+    opacity: 0.85;
+    max-width: 300px;
+    margin: 0;
+    line-height: 1.5;
+}
+
+[data-theme="dark"] .carousel-desc {
+    color: #e2e8f0;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid #1e3a5f;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.2s ease;
+}
+
+.carousel-dot:hover {
+    background: rgba(30, 58, 95, 0.3);
+}
+
+.carousel-dot.active {
+    background: #1e3a5f;
+}
+
+[data-theme="dark"] .carousel-dot {
+    border-color: #f7fafc;
+}
+
+[data-theme="dark"] .carousel-dot:hover {
+    background: rgba(247, 250, 252, 0.3);
+}
+
+[data-theme="dark"] .carousel-dot.active {
+    background: #f7fafc;
+}
+
+/* App card highlight animation */
+.app-card.highlight {
+    animation: card-pulse 1s ease-out;
+}
+
+@keyframes card-pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(157, 196, 212, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(157, 196, 212, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(157, 196, 212, 0);
+    }
 }
 
 /* Patreon Button */
@@ -711,16 +855,55 @@ footer p {
     }
 
     .hero {
-        padding: 4.5rem 0;
+        padding: 2.5rem 0;
     }
 
-    .hero h2 {
-        font-size: 2.25rem;
-        line-height: 1.2;
+    .hero-split {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
     }
 
-    .hero .intro {
-        font-size: 1.125rem;
+    .hero-left {
+        flex: none;
+        width: 100%;
+        align-items: center;
+    }
+
+    .hero-stats {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-right {
+        flex: none;
+        width: 100%;
+    }
+
+    .carousel {
+        padding: 1.5rem;
+    }
+
+    .carousel-slides {
+        min-height: 180px;
+    }
+
+    .carousel-icon {
+        width: 80px;
+        height: 80px;
+        border-radius: 18px;
+    }
+
+    .carousel-name {
+        font-size: 1.25rem;
+    }
+
+    .carousel-desc {
+        font-size: 0.9rem;
+    }
+
+    .carousel-dots {
+        margin-top: 1rem;
     }
 
     .patreon-btn {

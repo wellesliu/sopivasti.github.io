@@ -132,6 +132,100 @@ async function init() {
         });
     });
 
+    // Carousel functionality
+    const carousel = document.querySelector('.carousel');
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.carousel-dot');
+    let currentSlide = 0;
+    let carouselInterval = null;
+    let carouselTimeout = null;
+    const ROTATION_DELAY = 5000; // 5 seconds
+    const RESUME_DELAY = 10000; // 10 seconds after interaction
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+        currentSlide = index;
+    }
+
+    function nextSlide() {
+        showSlide((currentSlide + 1) % slides.length);
+    }
+
+    function startCarousel() {
+        // Respect reduced motion preference
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            return;
+        }
+        stopCarousel();
+        carouselInterval = setInterval(nextSlide, ROTATION_DELAY);
+    }
+
+    function stopCarousel() {
+        if (carouselInterval) {
+            clearInterval(carouselInterval);
+            carouselInterval = null;
+        }
+    }
+
+    function pauseAndResume() {
+        stopCarousel();
+        if (carouselTimeout) {
+            clearTimeout(carouselTimeout);
+        }
+        carouselTimeout = setTimeout(startCarousel, RESUME_DELAY);
+    }
+
+    // Dot click handlers
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showSlide(index);
+            pauseAndResume();
+        });
+    });
+
+    // Slide click - scroll to app
+    slides.forEach(slide => {
+        slide.addEventListener('click', () => {
+            const targetId = slide.dataset.target;
+            const targetCard = document.getElementById(targetId);
+            if (targetCard) {
+                const headerOffset = 100;
+                const elementPosition = targetCard.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+
+                // Add highlight animation
+                setTimeout(() => {
+                    targetCard.classList.add('highlight');
+                    targetCard.addEventListener('animationend', () => {
+                        targetCard.classList.remove('highlight');
+                    }, { once: true });
+                }, 500);
+            }
+        });
+    });
+
+    // Pause on hover (desktop)
+    if (carousel) {
+        carousel.addEventListener('mouseenter', stopCarousel);
+        carousel.addEventListener('mouseleave', startCarousel);
+
+        // Pause on touch (mobile)
+        carousel.addEventListener('touchstart', pauseAndResume, { passive: true });
+
+        // Start the carousel
+        startCarousel();
+    }
+
     // App category filtering
     const filterChips = document.querySelectorAll('.filter-chip');
     const appCards = document.querySelectorAll('.app-card');
