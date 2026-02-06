@@ -222,6 +222,25 @@ async function init() {
         // Pause on touch (mobile)
         carousel.addEventListener('touchstart', pauseAndResume, { passive: true });
 
+        // Keyboard arrow navigation
+        document.addEventListener('keydown', (e) => {
+            // Only respond if carousel is in viewport
+            const rect = carousel.getBoundingClientRect();
+            const inViewport = rect.top < window.innerHeight && rect.bottom > 0;
+
+            if (inViewport) {
+                if (e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    showSlide((currentSlide - 1 + slides.length) % slides.length);
+                    pauseAndResume();
+                } else if (e.key === 'ArrowRight') {
+                    e.preventDefault();
+                    showSlide((currentSlide + 1) % slides.length);
+                    pauseAndResume();
+                }
+            }
+        });
+
         // Start the carousel
         startCarousel();
     }
